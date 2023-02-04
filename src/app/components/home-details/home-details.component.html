@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+</head>
+
+<body>
+    <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/mp4/bg1.mp4" type="video/mp4" />
+    </video>
+    <div class="masthead">
+        <div class="masthead-content text-white">
+            <div class="container-fluid px-4 px-lg-0">
+                <h2 class="fst-italic lh-1 mb-4">Detalles de la vivienda</h2>
+            </div>
+        </div>
+    </div>
+    <section>
+
+        <div class="container px-4 px-lg-5" style="position: relative;">
+
+            <div class="row gx-4 gx-lg-5 align-items-center ">
+                <div class="col-lg-7 my-5"><img class="img-fluid rounded mb-4 mb-lg-0" [src]="dataDetailHome.img"
+                        alt="..." /></div>
+                <div class="col-lg-5 text-white">
+                    <h2 class="font-weight-light">{{dataDetailHome.name}}</h2>
+                    <p>{{dataDetailHome.Descripcion}}</p>
+                </div>
+            </div>
+
+            <div class="text-white  py-4 text-left">
+                <main class="contenedor1">
+                    <figure>
+                        <img id="icono" class="iconL" src="assets/img/area.png" alt="">
+                        <img id="iconoH" class="iconL" src="assets/img/bed_4731.png" alt="">
+                        <img id="iconoB" class="iconL" src="assets/img/2803508.png" alt="">
+                        <img id="iconoP" class="iconL" src="assets/img/parking.png" alt="">
+                        <img id="iconoR" class="iconL" src="assets/img/ropa.png" alt="">
+                        <figcaption>
+                            <div class="tooltip" id="tooltip">
+                                <div class="info">
+                                    <h3 id="Titulo" class="titulo"></h3>
+                                    <p id="detail" class="detail">
+                                    </p>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </main>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

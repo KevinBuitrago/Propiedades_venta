@@ -13,8 +13,8 @@ export class ApiService {
   url: string = "/api/";
 
   getHome(): Observable<GetHome> {
-    let GetHome = this.url + "list/";
-    return this.http.get<GetHome>(GetHome);
+    let direccion = this.url + "list/";
+    return this.http.get<GetHome>(direccion);
   }
 
   getDetailHome(id: any): Observable<GetDetailHome> {

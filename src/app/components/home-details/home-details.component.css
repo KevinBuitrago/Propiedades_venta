@@ -11416,6 +11416,13 @@ video.bg-video {
   max-width: 12%;
   max-height: 12%;
 }
+.iconI {
+  padding-left: 35px;
+  padding-right: 35px;
+  max-width: 12%;
+  max-height: 12%;
+  margin-left: 20%;
+}
 .mat-form-field + .mat-form-field,
 .mat-raised-button {
   margin-left: 8px;

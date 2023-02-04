@@ -1,7 +1,7 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { ApiService } from "../../service/api.service";
 import * as $ from 'jquery';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./home-details.component.css']
 })
 export class HomeDetailsComponent implements OnInit {
-	constructor(private api: ApiService, private activeRouter: ActivatedRoute) { }
+	constructor(private api: ApiService, private activeRouter: ActivatedRoute,private router: Router) { }
 
 	icono: any
 	iconoH: any
@@ -18,11 +18,11 @@ export class HomeDetailsComponent implements OnInit {
 	iconoP: any
 	iconoR: any
 	dataDetailHome:any = [];
-
+	id = this.activeRouter.snapshot.paramMap.get('id');
 	tooltip: any
 	ngOnInit(): void {
-		let id = this.activeRouter.snapshot.paramMap.get('id');
-		this.api.getDetailHome(id).subscribe((dta: any) => {
+
+		this.api.getDetailHome(this.id).subscribe((dta: any) => {
 			this.dataDetailHome =  dta;
 			console.log(this.dataDetailHome);
 			
@@ -135,5 +135,9 @@ export class HomeDetailsComponent implements OnInit {
 		this.tooltip!.style.left = `${izquierda}px`;
 		this.tooltip!.style.top = `${arriba}px`;
 	};
+
+	changeOfViewEdit(){
+		this.router.navigate(["detail", this.id]);
+	  }
 
 }

@@ -14,6 +14,7 @@ app.get("/api/list", (req, resp) => {
 
 app.get("/api/detail/:id", (req, resp) => {
     let err;
+    const { id } = req.params;
     const nn = fs.readFileSync("./Data/dataDeatilHome.json", 'utf8', function (errr, data) {
         err = errr;
     });
@@ -21,7 +22,7 @@ app.get("/api/detail/:id", (req, resp) => {
     let isId = false;
     if (!err) {
         for (const key in dataH) {
-            if (dataH[key].id == req.params.id) {
+            if (dataH[key].id == id) {
                 response = dataH[key];
                 response.message = "";
                 response.error = 0;
@@ -39,6 +40,11 @@ app.get("/api/detail/:id", (req, resp) => {
 
     resp.send(response);
 });
+
+app.put("/api/update/:id", (req, resp)=>{
+    const { id } = req.params;
+    const update = req.body;
+})
 
 app.listen(port, () => {
     console.log("estoy en ", port);

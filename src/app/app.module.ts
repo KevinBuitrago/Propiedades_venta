@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeDetailsComponent } from './components/home-details/home-details.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditHomeComponent } from './components/edit-home/edit-home.component';
 
 
 
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     StartComponent,
-    HomeDetailsComponent
+    HomeDetailsComponent,
+    EditHomeComponent
   ],
   imports: [
     NgbModule,
